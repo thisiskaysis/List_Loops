@@ -86,11 +86,11 @@ def is_prime(some_number: int): # A bit trickier!
         calculate = float(some_number / number)
         results.append(calculate)
 
-    has_integer_float = any(x.is_integer() for x in results)
+    has_integer = any(x.is_integer() for x in results)
 
     if some_number == 1 or some_number == 0:
         return False
-    elif has_integer_float != True:
+    elif has_integer != True:
         return True
     else:
         return False
