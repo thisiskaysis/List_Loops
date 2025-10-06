@@ -38,11 +38,11 @@ def lou_bega(lyrics_list: list):
             "A little bit of Rita's all I need"
         ]
     """
-    while lyrics_list.startswith():
-        lyrics_list.insert("A little bit of ")
-    return lyrics_list
+    add = "A little bit of "
+    new_lyrics = list(add + lyrics for lyrics in lyrics_list)
+    return new_lyrics
 
-def assemble_guest_list(guest_list: list):
+def assemble_guest_list():
     """This function repeatedly prompts the user for the name of a dinner guest.
     Each string the user supplies is added to a list. If/when the user hits 
     "Enter" without typing anything, the function stops asking and 
@@ -55,15 +55,13 @@ def assemble_guest_list(guest_list: list):
     """
     
     guest_list = []
-    guest_names = print("Enter guest name: ")
 
-    while guest_names != "":
-        print(guest_names)
-        guest_list.append(guest_names)
-        print(guest_names)
-        if guest_names == "":
+    while True:
+        name = input("Enter guest name: ")
+        if name == '':
             break
-
+        guest_list.append(name)
+    
     return guest_list
 
 
@@ -81,11 +79,21 @@ def is_prime(some_number: int): # A bit trickier!
     Returns:
         - a boolean representing whether or not some_number is prime
     """
+    
+    results = []
 
-    whole_number = range(2, some_number)
+    for number in range(2, some_number):
+        calculate = float(some_number / number)
+        results.append(calculate)
 
-    while some_number / whole_number != some_number:
+    has_integer_float = any(x.is_integer() for x in results)
+
+    if some_number == 1 or some_number == 0:
+        return False
+    elif has_integer_float != True:
         return True
+    else:
+        return False
     
     
     # Hint: 
