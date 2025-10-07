@@ -42,6 +42,12 @@ def lou_bega(lyrics_list: list):
     new_lyrics = list(add + lyrics for lyrics in lyrics_list)
     return new_lyrics
 
+#OR new_list = []
+#for lyric in lyrics_list:
+#   new_lyric = ("A little bit of " + lyric)
+#   new_list.append(new_lyric)
+#return new_list
+
 def assemble_guest_list():
     """This function repeatedly prompts the user for the name of a dinner guest.
     Each string the user supplies is added to a list. If/when the user hits 
@@ -63,6 +69,7 @@ def assemble_guest_list():
         guest_list.append(name)
     
     return guest_list
+   
 
 
 
@@ -88,15 +95,10 @@ def is_prime(some_number: int): # A bit trickier!
 
     has_integer = any(result.is_integer() for result in result_list)
 
-    if some_number == 1 or some_number == 0:
+    if some_number < 2:
         return False
     elif has_integer != True:
         return True
     else:
         return False
-    
-    
-    # Hint: 
-    #   int(1.5) == 1.0
-
 
