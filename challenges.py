@@ -80,13 +80,13 @@ def is_prime(some_number: int): # A bit trickier!
         - a boolean representing whether or not some_number is prime
     """
     
-    results = []
+    result_list = []
 
     for number in range(2, some_number):
         calculate = float(some_number / number)
-        results.append(calculate)
+        result_list.append(calculate)
 
-    has_integer = any(x.is_integer() for x in results)
+    has_integer = any(result.is_integer() for result in result_list)
 
     if some_number == 1 or some_number == 0:
         return False
